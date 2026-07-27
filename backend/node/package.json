@@ -3,6 +3,6 @@
     "node": ">=24.18.0"
   },
   "devDependencies": {
-    "@types/node": "^24.18.0"
+    "@types/node": "^24.0.0"
   }
 }
