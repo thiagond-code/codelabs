@@ -8,7 +8,7 @@ const { schema } = require("./schema.ts");
 
 const PORT = Number(process.env.PORT ?? 3000);
 
-const db: DBConfigType = new DatabaseSync("sqlite.txt");
+const db: DBConfigType = new DatabaseSync("sqlite.db");
 
 try {
   db.exec(schema.createTable);
@@ -99,9 +99,9 @@ const server = http.createServer(
       try {
         const query = db.prepare(schema.queries.deleteMessage);
 
-        const result = query.run({ id: userId });
+        const result = query.get({ id: userId });
 
-        if (result.changes === 0) {
+        if (!result) {
           res.writeHead(404, { "Content-Type": "text/plain" });
           return res.end("User not found");
         }
@@ -112,8 +112,7 @@ const server = http.createServer(
         return res.end(
           JSON.stringify({
             success: true,
-            deletedId: userId,
-            changes: result.changes,
+            deletedUser: result,
           }),
         );
       } catch (error) {
