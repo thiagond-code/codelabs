@@ -31,10 +31,14 @@ function getNetworkData(): NetworkData[] {
 }
 
 function getMemoryData() {
-  const totalMem = Number((os.totalmem() / 1024 ** 3).toFixed(2));
-  const freeMem = Number((os.freemem() / 1024 ** 3).toFixed(2));
-  const usedMem = Number((totalMem - freeMem).toFixed(2));
-  const usagePercent = `${((usedMem / totalMem) * 100).toFixed(2)}%`;
+  const totalBytes = os.totalmem();
+  const freeBytes = os.freemem();
+  const usedBytes = totalBytes - freeBytes;
+
+  const totalMem = Number((totalBytes / 1024 ** 3).toFixed(2));
+  const freeMem = Number((freeBytes / 1024 ** 3).toFixed(2));
+  const usedMem = Number((usedBytes / 1024 ** 3).toFixed(2));
+  const usagePercent = `${((usedBytes / totalBytes) * 100).toFixed(2)}%`;
 
   return {
     total: `${totalMem} GB`,
