@@ -1,10 +1,10 @@
-# codelab
+# codelabs
 
 > A personal monorepo for experiments, prototypes & learning.
 
 ## About
 
-**codelab** is my personal playground for exploring new ideas, testing technologies & experimenting with different architectural approaches.
+**codelabs** is my personal playground for exploring new ideas, testing technologies & experimenting with different architectural approaches.
 
 Unlike portfolio projects, this repository is intentionally built as a safe space to learn. Here I can prototype features, compare implementations, try unfamiliar tools & even break things without worrying about production quality.
 
@@ -29,44 +29,56 @@ Not every project here is expected to become "finished." Some are proof of conce
 ## Repository Structure
 
 ```
-codelab/
-    ├── backend/
-    │   ├── node/
-    │   │   ├── concepts/
-    │   │   │   └── cjs/
-    │   │   │       ├── db/
-    │   │   │       │   └── sqlite/
-    │   │   │       │       └── native/
-    │   │   │       │           ├── api.rest
-    │   │   │       │           ├── index.ts
-    │   │   │       │           ├── package.json
-    │   │   │       │           └── schema.ts
-    │   │   │       └── server/
-    │   │   │           └── mvp/
-    │   │   │               ├── index.ts
-    │   │   │               └── package.json
-    │   │   ├── frameworks/
-    │   │   │   └── express/
-    │   │   │       ├── cjs/
-    │   │   │       │   ├── db/
-    │   │   │       │   │   └── sqlite/
-    │   │   │       │   │       └── native/
-    │   │   │       │   │           ├── api.rest
-    │   │   │       │   │           ├── index.ts
-    │   │   │       │   │           └── package.json
-    │   │   │       │   └── server/
-    │   │   │       │       └── mvp/
-    │   │   │       │           ├── index.ts
-    │   │   │       │           └── package.json
-    │   │   │       ├── package-lock.json
-    │   │   │       └── package.json
-    │   │   ├── package-lock.json
-    │   │   ├── package.json
-    │   │   └── tsconfig.json
-    │   └── .gitignore
-    ├── .prettierrc
-    └── README.md
+📦 codelabs
+├─ README.md
+└─ backend
+   ├─ .env.example
+   ├─ .gitignore
+   ├─ .vsls.json
+   └─ js
+      └─ node
+         ├─ concepts
+         │  └─ cjs
+         │     ├─ db
+         │     │  ├─ sqlite
+         │     │  │  └─ native
+         │     │  │     ├─ api.rest
+         │     │  │     ├─ index.ts
+         │     │  │     ├─ package.json
+         │     │  │     └─ schema.ts
+         │     │  └─ supabase
+         │     │     ├─ .env.example
+         │     │     ├─ api.http
+         │     │     ├─ db.ts
+         │     │     ├─ index.ts
+         │     │     ├─ package-lock.json
+         │     │     ├─ package.json
+         │     │     └─ types.ts
+         │     ├─ os
+         │     │  ├─ index.ts
+         │     │  ├─ package-lock.json
+         │     │  └─ package.json
+         │     └─ server
+         │        ├─ mvp
+         │        │  ├─ index.ts
+         │        │  └─ package.json
+         │        └─ routes
+         │           ├─ index.ts
+         │           └─ package.json
+         ├─ frameworks
+         │  └─ express
+         │     ├─ cjs
+         │     │  └─ server
+         │     │     └─ mvp
+         │     │        ├─ index.ts
+         │     │        └─ package.json
+         │     ├─ package-lock.json
+         │     └─ package.json
+         ├─ package-lock.json
+         ├─ package.json
+         └─ tsconfig.json
 ```
+
 
 ## Purpose
 
@@ -95,4 +107,4 @@ This repository is under continuous development.
 
 Code quality, conventions & folder structures may change frequently as new ideas are tested and older experiments are refactored or discarded.
 
-That is expected — the purpose of **codelab** is exploration.
+That is expected — the purpose of **codelabs** is exploration.
